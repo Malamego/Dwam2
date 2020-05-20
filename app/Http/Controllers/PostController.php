@@ -124,7 +124,7 @@ class PostController extends Controller
         $pos->user_id = auth()->user()->id;
 
         if ($request->hasFile('image')) {
-            $pos->image = Helper::UploadUpdate($pos->image ?? null, 'posts', $request->file('image'), 'checkImages');
+            $pos->image = Helper::UploadUpdate($pos->image ?? "", 'posts', $request->file('image'), 'checkImages');
         }
 
         $pos->save();

@@ -49,7 +49,7 @@ class EpcategoryController extends Controller
         if ( $request->file('image')) {
           $requestAll['image'] = Helper::Upload('epcategories', $request->file('image'), 'checkImages');
         }
-      
+
         $epcat = Epcategory::create($requestAll);
 
         session()->flash('success', trans('main.added-message'));
@@ -104,7 +104,7 @@ class EpcategoryController extends Controller
         $epcat->keyword = $request->keyword;
 
         if ($request->hasFile('image')) {
-            $epcat->image = Helper::UploadUpdate($epcat->image ?? null, 'epcategories', $request->file('image'), 'checkImages');
+            $epcat->image = Helper::UploadUpdate($epcat->image ?? "", 'epcategories', $request->file('image'), 'checkImages');
         }
         $epcat->save();
 

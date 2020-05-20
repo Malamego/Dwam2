@@ -104,7 +104,7 @@ class VcategoryController extends Controller
         $vcat->keyword = $request->keyword;
 
         if ($request->hasFile('image')) {
-            $vcat->image = Helper::UploadUpdate($vcat->image ?? null, 'vcategories', $request->file('image'), 'checkImages');
+            $vcat->image = Helper::UploadUpdate($vcat->image ?? "", 'vcategories', $request->file('image'), 'checkImages');
         }
         $vcat->save();
 

@@ -120,7 +120,7 @@ class VpostController extends Controller
         $vpos->user_id = auth()->user()->id;
 
         if ($request->hasFile('image')) {
-            $vpos->image = Helper::UploadUpdate($vpos->image ?? null, 'vposts', $request->file('image'), 'checkImages');
+            $vpos->image = Helper::UploadUpdate($vpos->image ?? "", 'vposts', $request->file('image'), 'checkImages');
         }
 
         $vpos->save();

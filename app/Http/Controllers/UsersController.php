@@ -120,7 +120,7 @@ class UsersController extends Controller
         $user->phone = $request->phone;
 
         if ($request->hasFile('image')) {
-            $user->image = Helper::UploadUpdate($user->image ?? null, 'users', $request->file('image'), 'checkImages');
+            $user->image = Helper::UploadUpdate($user->image ?? "", 'users', $request->file('image'), 'checkImages');
         }
         $user->save();
 

@@ -47,7 +47,7 @@ class EvcategoryController extends Controller
         $requestAll = $request->all();
         if ( $request->file('image')) {
           $requestAll['image'] = Helper::Upload('evcategories', $request->file('image'), 'checkImages');
-        }    
+        }
         $evcat = Evcategory::create($requestAll);
 
         session()->flash('success', trans('main.added-message'));
@@ -102,7 +102,7 @@ class EvcategoryController extends Controller
         $evcat->keyword = $request->keyword;
 
         if ($request->hasFile('image')) {
-            $evcat->image = Helper::UploadUpdate($evcat->image ?? null, 'evcategories', $request->file('image'), 'checkImages');
+            $evcat->image = Helper::UploadUpdate($evcat->image ?? "", 'evcategories', $request->file('image'), 'checkImages');
         }
         $evcat->save();
 

@@ -122,7 +122,7 @@ class EpostController extends Controller
         $epos->user_id = auth()->user()->id;
 
         if ($request->hasFile('image')) {
-            $epos->image = Helper::UploadUpdate($epos->image ?? null, 'eposts', $request->file('image'), 'checkImages');
+            $epos->image = Helper::UploadUpdate($epos->image ?? "", 'eposts', $request->file('image'), 'checkImages');
         }
 
         $epos->save();

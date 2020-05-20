@@ -52,7 +52,7 @@ class EvpostController extends Controller
      */
     public function store(EvpostsRequest $request)
     {
-        $requestAll = $request->all();        
+        $requestAll = $request->all();
         $requestAll['image'] = Helper::Upload('evposts', $request->file('image'), 'checkImages');
         $requestAll['user_id'] = auth()->user()->id;
         $evpos = Evpost::create($requestAll);
@@ -120,7 +120,7 @@ class EvpostController extends Controller
         $evpos->user_id = auth()->user()->id;
 
         if ($request->hasFile('image')) {
-            $evpos->image = Helper::UploadUpdate($evpos->image ?? null, 'evposts', $request->file('image'), 'checkImages');
+            $evpos->image = Helper::UploadUpdate($evpos->image ?? "", 'evposts', $request->file('image'), 'checkImages');
         }
 
         $evpos->save();

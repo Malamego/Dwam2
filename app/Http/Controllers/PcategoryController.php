@@ -103,7 +103,7 @@ class PcategoryController extends Controller
         $pcat->keyword = $request->keyword;
 
         if ($request->hasFile('image')) {
-            $pcat->image = Helper::UploadUpdate($pcat->image ?? null, 'pcategories', $request->file('image'), 'checkImages');
+            $pcat->image = Helper::UploadUpdate($pcat->image ?? "", 'pcategories', $request->file('image'), 'checkImages');
         }
         $pcat->save();
 
