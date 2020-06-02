@@ -77,5 +77,10 @@ Route::middleware(\App\Http\Middleware\LangMiddleware::class)->group(function ()
     Route::resource('evcategories', 'EvcategoryController');
     Route::post('evcategories/multi_delete', 'EvcategoryController@multi_delete')->name('evcategories.multi_delete');
 
-    Route::get('get-user-answers', 'AnswersController@user_answers')->name('user_answers.index');
+    // Website Setting
+    Route::resource('settings', 'SettingController');
+    Route::post('settings/multi_delete', 'EvcategoryController@multi_delete')->name('settings.multi_delete');
+
+
+  //  Route::get('get-user-answers', 'AnswersController@user_answers')->name('user_answers.index');
 });

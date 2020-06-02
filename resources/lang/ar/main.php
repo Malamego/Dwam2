@@ -785,4 +785,7 @@ return [
     'evpost'                          => 'منشور فيديو E',
     'evposts'                         => 'منشورات فيديو E',
     'evcategory'                      => 'تصنيف منشور فيديو E',
+    // setting
+    'sitename'                     => 'أسم الموقع',
+
 ];

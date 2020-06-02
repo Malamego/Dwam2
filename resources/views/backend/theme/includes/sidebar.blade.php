@@ -255,7 +255,33 @@
                      </li>
                  </ul>
              </li>
-             
+
+             <!-- Add Site Seeting   (Mario Added) -->
+             <li class="heading">
+                 <h3 class="uppercase">{{ trans('main.settings') }}</h3>
+             </li>
+
+             <li class="nav-item  {{ active_route('setting.*') }}">
+                 <a href="javascript:;" class="nav-link nav-toggle">
+                     <i class="icon-users"></i>
+                     <span class="title">{{ trans('main.settings') }}</span>
+                     <span class="arrow"></span>
+                 </a>
+                 <ul class="sub-menu">
+                     <li class="nav-item {{ active_route('settings.edit') }}">
+                         <a href="{{ route('settings.edit', 1) }}" class="nav-link ">
+                             <span class="title">{{ trans('main.edit') }} {{ trans('main.settings') }}</span>
+                         </a>
+                     </li>
+                     <li class="nav-item {{ active_route('settings.show') }}">
+                         <a href="{{ route('settings.show', 1) }}" class="nav-link ">
+                             <span class="title">{{ trans('main.show-all') }} {{ trans('main.settings') }}</span>
+                         </a>
+                     </li>
+
+                 </ul>
+             </li>
+
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

@@ -30,6 +30,7 @@ class PostsRequest extends FormRequest
         return [
             'title'      => 'required',
             'pcat_id'    => 'required|exists:pcategories,id',
+            'ptaq_id'    => 'required|exists:ptaqs,id',
             'content'    => 'required',
             'keyword'    => 'required',
             'desc'       => 'required',

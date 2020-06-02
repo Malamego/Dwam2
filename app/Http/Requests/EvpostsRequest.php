@@ -30,6 +30,7 @@ class EvpostsRequest extends FormRequest
         return [
             'title'      => 'required',
             'evcat_id'    => 'required|exists:evcategories,id',
+            'evtaq_id'    => 'required|exists:evtaqs,id',
             'content'      => 'required',
             'keyword'    => 'required',
             'desc'       => 'required',

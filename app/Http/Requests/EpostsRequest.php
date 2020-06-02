@@ -30,6 +30,7 @@ class EpostsRequest extends FormRequest
         return [
             'title'      => 'required',
             'epcat_id'    => 'required|exists:epcategories,id',
+            'eptaq_id'    => 'required|exists:eptaqs,id',
             'content'    => 'required',
             'keyword'    => 'required',
             'desc'       => 'required',
