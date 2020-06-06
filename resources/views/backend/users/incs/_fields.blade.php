@@ -55,7 +55,7 @@
             <select class="form-control" id="type" name="type">
                 <option value=""></option>
                 <option value="user" {{ getData($data, 'type') == 'user' ? ' selected' : '' }}>{{trans('main.user')}}</option>
-                <!-- <option value="admin" {{ getData($data, 'type') == 'admin' ? ' selected' : '' }}>{{trans('main.admin')}}</option> -->
+                <option value="admin" {{ getData($data, 'type') == 'admin' ? ' selected' : '' }}>{{trans('main.admin')}}</option>
             </select>
             @if ($errors->has('type'))
                 <span class="help-block">
